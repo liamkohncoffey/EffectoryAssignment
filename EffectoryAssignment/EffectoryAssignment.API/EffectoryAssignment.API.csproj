@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AssemblyName>EffectoryAssignment.API</AssemblyName>
+        <RootNamespace>EffectoryAssignment.API</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EffectoryAssignment.Application\EffectoryAssignment.Application.csproj" />
+      <ProjectReference Include="..\EffectoryAssignment.Domain\EffectoryAssignment.Domain.csproj" />
+      <ProjectReference Include="..\EffectoryAssignment.Infrastructure\EffectoryAssignment.Infrastructure.csproj" />
+    </ItemGroup>
+
+
+</Project>
