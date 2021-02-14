@@ -22,7 +22,7 @@ Incomplete
 
 # How to run:
 - Launch your prefered ide.
-- Open the solition.
+- Open the solution.
 - Hit run.
 - It should be running on http://localhost:5000/
 - If you have postman there is a postman enviroment and collection included with this solution
