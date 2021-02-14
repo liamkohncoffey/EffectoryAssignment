@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EffectoryAssignment.Infrast
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EffectoryAssignment.SharedKernel", "EffectoryAssignment.SharedKernel\EffectoryAssignment.SharedKernel.csproj", "{7B640A11-140E-4AEB-AC33-B5284331A2CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EffectoryAssignment.Definition", "EffectoryAssignment.Definition\EffectoryAssignment.Definition.csproj", "{F9BA85AD-7BDE-4878-977D-D9E72FC97EFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{7B640A11-140E-4AEB-AC33-B5284331A2CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B640A11-140E-4AEB-AC33-B5284331A2CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B640A11-140E-4AEB-AC33-B5284331A2CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9BA85AD-7BDE-4878-977D-D9E72FC97EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9BA85AD-7BDE-4878-977D-D9E72FC97EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9BA85AD-7BDE-4878-977D-D9E72FC97EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9BA85AD-7BDE-4878-977D-D9E72FC97EFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

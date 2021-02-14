@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 namespace EffectoryAssignment.Application.Requests.questions
 {
-    public class GetQuestionnaireItemApplicationResponse
+    public class QuestionsApplicationResponse
     {
-        public long? QuestionId { get; set; }
+        public IEnumerable<QuestionApplicationResponse> Questions { get; set; } 
     }
 }

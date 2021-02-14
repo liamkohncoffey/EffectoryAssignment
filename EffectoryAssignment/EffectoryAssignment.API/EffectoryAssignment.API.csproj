@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\EffectoryAssignment.Application\EffectoryAssignment.Application.csproj" />
+      <ProjectReference Include="..\EffectoryAssignment.Definition\EffectoryAssignment.Definition.csproj" />
       <ProjectReference Include="..\EffectoryAssignment.Domain\EffectoryAssignment.Domain.csproj" />
       <ProjectReference Include="..\EffectoryAssignment.Infrastructure\EffectoryAssignment.Infrastructure.csproj" />
     </ItemGroup>

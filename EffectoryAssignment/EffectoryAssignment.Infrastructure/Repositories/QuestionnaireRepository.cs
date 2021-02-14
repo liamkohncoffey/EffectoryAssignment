@@ -1,35 +1,43 @@
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using EffectoryAssignment.Domain.Models;
 using EffectoryAssignment.Domain.Repositories;
-using Newtonsoft.Json;
 
 namespace EffectoryAssignment.Infrastructure.Repositories
 {
     public class QuestionnaireRepository : IQuestionnaireRepository
     {
-        private static Questionnaire _questionnaire;
+        public static Questionnaire Questionnaire;
 
-        public QuestionnaireRepository()
+        public QuestionnaireRepository(Questionnaire questionnaire)
         {
-            var json = File.ReadAllText("../EffectoryAssignment.Infrastructure/questionnaire.json");
-            _questionnaire = JsonConvert.DeserializeObject<Questionnaire>(json);
+            Questionnaire = questionnaire;
         }
         
-        public async Task<Subject> GetQuestionnaireItem(long subjectId, long questionId, CancellationToken cancellationToken = default)
+        public async Task<Subject> GetSubject(long subjectId, CancellationToken cancellationToken = default)
         {
-            var questionnaireItem = _questionnaire.Subjects.FirstOrDefault(c => c.SubjectId == subjectId);
+            var subject = Questionnaire.Subjects.FirstOrDefault(c => c.SubjectId == subjectId);
 
-            if(questionnaireItem == null)
+            if(subject == null)
             {
                 return new Subject();
             }
 
-            return questionnaireItem;
+            return subject;
+        }
+
+        public async Task<Question> GetQuestion(long subjectId, long questionId, CancellationToken cancellationToken)
+        {
+            var question = Questionnaire.Subjects.FirstOrDefault(c => c.SubjectId == subjectId)?.Questions
+                .FirstOrDefault(c => c.QuestionId.HasValue && c.QuestionId.Value == questionId);
+
+            if (question == null)
+            {
+                return new Question();
+            }
+
+            return question;
         }
     }
 }
