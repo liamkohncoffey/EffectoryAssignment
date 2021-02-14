@@ -9,6 +9,17 @@ This coding assignment for a role at effectory. The main focus of this assignmen
 - EffectoryAssignment.Domain
 - This would conatin anything specific to the questionnares domain, meaning Database models, database interfaces and any other internal classes that you would like to remain inside this domain.
 
+# What was Finished/Not Finished
+
+Completed:
+- Getting one or more questions and answer options.
+- Posting one or more answers for the questions.
+
+Incomplete
+- paging the result.
+- Returning a results calculation of min, max, average for each answer, calculated across the departments.
+- Create a test-suite 
+
 # How to run:
 - Launch your prefered ide.
 - Open the solition.
@@ -19,13 +30,3 @@ This coding assignment for a role at effectory. The main focus of this assignmen
 
 # Possible hotspots
 - The only thing i can think of that might not workin is the .json object path, If this doesn't work update the pathname to what ever it should be.
-
-
-Completed:
-- Getting one or more questions and answer options.
-- Posting one or more answers for the questions.
-
-Incomplete
-- paging the result.
-- Returning a results calculation of min, max, average for each answer, calculated across the departments.
-- Create a test-suite 
