@@ -22,6 +22,7 @@ namespace EffectoryAssignment.API.Extensions
         {
             return new PostAnswerApplicationRequest
             {
+                UserId = request.UserId,
                 Department = Enum.TryParse<Departments>(request.Department, out var department) ? department : Departments.Unknown,
                 SubjectId = subjectId,
                 QuestionId = questionsId,

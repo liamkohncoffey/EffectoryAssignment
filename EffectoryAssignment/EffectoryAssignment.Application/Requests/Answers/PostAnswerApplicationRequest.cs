@@ -1,3 +1,4 @@
+using System;
 using EffectoryAssignment.SharedKernel.Enums;
 
 namespace EffectoryAssignment.Application.Requests.Answers
@@ -8,5 +9,6 @@ namespace EffectoryAssignment.Application.Requests.Answers
         public long SubjectId { get; set; }
         public long QuestionId { get; set; }
         public long AnswersId { get; set; }
+        public Guid UserId { get; set; }
     }
 }

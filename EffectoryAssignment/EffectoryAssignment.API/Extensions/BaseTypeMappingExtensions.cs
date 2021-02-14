@@ -54,7 +54,8 @@ namespace EffectoryAssignment.API.Extensions
             {
                 ResponseId = response.ResponseId,
                 Department = response.Department,
-                ItemType = response.ItemType
+                ItemType = response.ItemType,
+                UserId = response.UserId,
             };
         }
     }

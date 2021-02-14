@@ -51,6 +51,7 @@ namespace EffectoryAssignment.Application.Extensions
             
             return new ResponseApplicationResponse
             {
+                UserId = response.UserId,
                 ResponseId = response.ResponseId,
                 Department = response.Department,
                 ItemType = response.ItemType
