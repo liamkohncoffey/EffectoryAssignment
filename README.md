@@ -3,7 +3,7 @@ This coding assignment for a role at effectory. The main focus of this assignmen
 
 # Explination Behind Some of the class libraries:
 - EffectoryAssignment.SharedKernel
-- This is the shared kernals for the solution usually this would be Shared between C# projects containing specific classes and enums that would be considered part of the questionare's Domain
+- This is the shared kernals for the solution usually this would be Shared between C# projects via Nuget or MyGet containing specific classes and enums that would be considered part of the questionare's Domain
 - EffectoryAssignment.Definition
 - This is the class library which would also be shared also via Nuget, this would contaion any requests and responses for this Domain, also any event defientions or interfaces.
 - EffectoryAssignment.Domain
@@ -17,7 +17,7 @@ This coding assignment for a role at effectory. The main focus of this assignmen
 - If you have postman there is a postman enviroment and collection included with this solution
 - You should be able to import these both in order to test out the API
 
-#Possible hotspots
+# Possible hotspots
 - The only thing i can think of that might not workin is the .json object path, If this doesn't work update the pathname to what ever it should be.
 
 
@@ -28,4 +28,4 @@ Completed:
 Incomplete
 - paging the result.
 - Returning a results calculation of min, max, average for each answer, calculated across the departments.
-- We also want you to create a test-suite for the API to check its correctness.
+- Create a test-suite 
