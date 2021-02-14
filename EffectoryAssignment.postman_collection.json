@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "29c66773-3be3-4a43-9156-3fbfb1f73db9",
+		"name": "EffectoryAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Questions",
+			"item": [
+				{
+					"name": "Get Questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/subjects/{{subjectId}}/questions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"subjects",
+								"{{subjectId}}",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/subjects/{{subjectId}}/questions/3807638",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"subjects",
+								"{{subjectId}}",
+								"questions",
+								"3807638"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Answers",
+			"item": [
+				{
+					"name": "Get Answer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/subjects/{{subjectId}}/questions/3807638/answers/17969124",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"subjects",
+								"{{subjectId}}",
+								"questions",
+								"3807638",
+								"answers",
+								"17969124"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Answers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/subjects/{{subjectId}}/questions/3807638/answers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"subjects",
+								"{{subjectId}}",
+								"questions",
+								"3807638",
+								"answers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Responses",
+			"item": [
+				{
+					"name": "Post Response",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Department\" : \"Sales\",\n    \"UserId\" : \"6a5b9e4b-974d-47be-b2dd-e0b8ee95d3b6\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/subjects/{{subjectId}}/questions/3807638/answers/17969124/response",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"subjects",
+								"{{subjectId}}",
+								"questions",
+								"3807638",
+								"answers",
+								"17969124",
+								"response"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
