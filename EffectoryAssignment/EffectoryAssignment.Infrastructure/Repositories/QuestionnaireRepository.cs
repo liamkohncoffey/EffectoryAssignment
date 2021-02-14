@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -38,6 +39,35 @@ namespace EffectoryAssignment.Infrastructure.Repositories
             }
 
             return question;
+        }
+
+        public async Task<Answer> GetAnswer(long subjectId, long questionId, long answerId, CancellationToken cancellationToken)
+        {
+            var answers = Questionnaire.Subjects.FirstOrDefault(c => c.SubjectId == subjectId)?
+                .Questions.FirstOrDefault(c => c.QuestionId.HasValue && c.QuestionId.Value == questionId)?
+                .Answers.FirstOrDefault(c => c.AnswerId.HasValue &&  c.AnswerId.Value == answerId);
+
+            if (answers == null)
+            {
+                return new Answer();
+            }
+
+            return answers;
+        }
+
+        public async Task<IEnumerable<Answer>> GetAnswers(long subjectId, long questionId, CancellationToken cancellationToken)
+        {
+            var answers = Questionnaire.Subjects
+                .FirstOrDefault(c => c.SubjectId == subjectId)?
+                .Questions.FirstOrDefault(c => c.QuestionId.HasValue && c.QuestionId.Value == questionId)?
+                .Answers;
+
+            if (answers == null)
+            {
+                return new List<Answer>();
+            }
+
+            return answers;
         }
     }
 }

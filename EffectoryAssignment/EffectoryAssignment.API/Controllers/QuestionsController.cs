@@ -17,20 +17,20 @@ namespace EffectoryAssignment.API.Controllers
             _questionsService = questionsService;
         }
         
-        [HttpGet]
-        public async Task<IActionResult> GetQuestions(long subjectId, CancellationToken cancellationToken)
-        {
-            var question = await _questionsService.GetQuestions(subjectId, cancellationToken);
-
-            return Ok(question.ToApiResponse());
-        }
-        
         [HttpGet("{questionId}")]
         public async Task<IActionResult> GetQuestion(long subjectId, long questionId, CancellationToken cancellationToken)
         {
             var question = await _questionsService.GetQuestion(subjectId, questionId, cancellationToken);
 
             return Ok(question.ToQuestionResponse());
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> GetQuestions(long subjectId, CancellationToken cancellationToken)
+        {
+            var question = await _questionsService.GetQuestions(subjectId, cancellationToken);
+
+            return Ok(question.ToApiResponse());
         }
     }
 }

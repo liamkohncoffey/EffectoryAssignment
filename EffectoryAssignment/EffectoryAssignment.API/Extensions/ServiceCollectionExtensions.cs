@@ -25,8 +25,8 @@ namespace EffectoryAssignment.API.Extensions
 
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
-            //Usually this is where i would register the services.
             services.AddScoped<IQuestionsService, QuestionsService>();
+            services.AddScoped<IAnswersService, AnswersService>();
             
             return services;
         }
