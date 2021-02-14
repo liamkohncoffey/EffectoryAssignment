@@ -1,6 +1,6 @@
 using EffectoryAssignment.SharedKernel.Enums;
 
-namespace EffectoryAssignment.Application.Requests
+namespace EffectoryAssignment.Application.Responses
 {
     public class QuestionnaireItemBaseApplicationResponse
     {

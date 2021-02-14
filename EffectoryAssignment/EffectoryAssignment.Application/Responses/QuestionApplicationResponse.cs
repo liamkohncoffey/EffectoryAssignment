@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace EffectoryAssignment.Application.Requests
+namespace EffectoryAssignment.Application.Responses
 {
     public class QuestionApplicationResponse : QuestionnaireItemBaseApplicationResponse
     {

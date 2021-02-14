@@ -2,8 +2,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using EffectoryAssignment.Application.Extensions;
 using EffectoryAssignment.Application.Interfaces;
-using EffectoryAssignment.Application.Requests;
-using EffectoryAssignment.Application.Requests.Answers;
+using EffectoryAssignment.Application.Responses;
+using EffectoryAssignment.Application.Responses.Answers;
 using EffectoryAssignment.Domain.Repositories;
 
 namespace EffectoryAssignment.Application.Services
@@ -21,14 +21,14 @@ namespace EffectoryAssignment.Application.Services
         {
             var answers = await _questionnaireRepository.GetAnswers(subjectId, questionId, cancellationToken);
 
-            return answers.ToAnswersApplicationResponse();
+            return answers.ToApplicationResponse();
         }
 
         public async Task<AnswerApplicationResponse> GetAnswer(long subjectId, long questionId, long answerId, CancellationToken cancellationToken)
         {
             var answer = await _questionnaireRepository.GetAnswer(subjectId, questionId, answerId, cancellationToken);
 
-            return answer.ToAnswerApplicationResponse();
+            return answer.ToApplicationResponse();
         }
     }
 }

@@ -2,8 +2,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using EffectoryAssignment.Application.Extensions;
 using EffectoryAssignment.Application.Interfaces;
-using EffectoryAssignment.Application.Requests;
-using EffectoryAssignment.Application.Requests.questions;
+using EffectoryAssignment.Application.Responses;
+using EffectoryAssignment.Application.Responses.Questions;
 using EffectoryAssignment.Domain.Repositories;
 
 namespace EffectoryAssignment.Application.Services
@@ -28,7 +28,7 @@ namespace EffectoryAssignment.Application.Services
         {
             var subject = await _questionnaireRepository.GetQuestion(subjectId, questionId, cancellationToken);
 
-            return subject.ToQuestionApplicationResponse();
+            return subject.ToApplicationResponse();
         }
     }
 }

@@ -6,6 +6,6 @@ namespace EffectoryAssignment.Definition
     {
         public long? AnswerId { get; set; }
         public short AnswerType { get; set; }
-        public List<QuestionnaireItemBaseResponse> QuestionnaireItems { get; set; }
+        public IEnumerable<ResponseResponse> Responses { get; set; }
     }
 }

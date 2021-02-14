@@ -5,5 +5,6 @@ namespace EffectoryAssignment.SharedKernel.Enums
         Subject,
         Question,
         Answer,
+        Response
     }
 }

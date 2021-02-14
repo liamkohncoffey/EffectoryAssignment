@@ -1,12 +1,13 @@
 using System.Linq;
-using EffectoryAssignment.Application.Requests;
+using EffectoryAssignment.Application.Responses;
 using EffectoryAssignment.Definition;
+using ResponseResponse = EffectoryAssignment.Definition.ResponseResponse;
 
 namespace EffectoryAssignment.API.Extensions
 {
     public static class BaseTypeMappingExtensions
     {
-        public static QuestionResponse ToQuestionResponse(this QuestionApplicationResponse question)
+        public static QuestionResponse ToApiResponse(this QuestionApplicationResponse question)
         {
             return new QuestionResponse
             {
@@ -15,12 +16,12 @@ namespace EffectoryAssignment.API.Extensions
                 ItemType = question.ItemType,
                 OrderNumber = question.OrderNumber,
                 QuestionId = question.QuestionId,
-                Texts = question.Texts.ToTextResponse(),
-                Answers = question.Answers.Select(c => c.ToAnswerResponse())
+                Texts = question.Texts.ToApiResponse(),
+                Answers = question.Answers.Select(c => c.ToApiResponse())
             };
         }
         
-        public static AnswerResponse ToAnswerResponse(this AnswerApplicationResponse answer)
+        public static AnswerResponse ToApiResponse(this AnswerApplicationResponse answer)
         {
             return new AnswerResponse
             {
@@ -28,16 +29,32 @@ namespace EffectoryAssignment.API.Extensions
                 AnswerType = answer.AnswerType,
                 ItemType = answer.ItemType,
                 OrderNumber = answer.OrderNumber,
-                Texts = answer.Texts.ToTextResponse()
+                Texts = answer.Texts.ToApiResponse(),
+                Responses = answer.Responses?.Select(c => c.ToResponseResponse())
             };
         }
         
-        public static TextResponse ToTextResponse(this TextApplicationResponse text)
+        public static TextResponse ToApiResponse(this TextApplicationResponse text)
         {
             return new TextResponse
             {
                 Us = text.Us,
                 Nl = text.Nl
+            };
+        }
+        
+        public static ResponseResponse ToResponseResponse(this ResponseApplicationResponse response)
+        {
+            if (response == null)
+            {
+                return null;
+            }
+            
+            return new ResponseResponse
+            {
+                ResponseId = response.ResponseId,
+                Department = response.Department,
+                ItemType = response.ItemType
             };
         }
     }

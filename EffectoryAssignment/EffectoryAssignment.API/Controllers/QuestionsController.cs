@@ -22,15 +22,15 @@ namespace EffectoryAssignment.API.Controllers
         {
             var question = await _questionsService.GetQuestion(subjectId, questionId, cancellationToken);
 
-            return Ok(question.ToQuestionResponse());
+            return Ok(question.ToApiResponse());
         }
         
         [HttpGet]
         public async Task<IActionResult> GetQuestions(long subjectId, CancellationToken cancellationToken)
         {
-            var question = await _questionsService.GetQuestions(subjectId, cancellationToken);
+            var questions = await _questionsService.GetQuestions(subjectId, cancellationToken);
 
-            return Ok(question.ToApiResponse());
+            return Ok(questions.ToApiResponse());
         }
     }
 }

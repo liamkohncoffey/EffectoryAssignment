@@ -2,6 +2,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using EffectoryAssignment.API.Extensions;
 using EffectoryAssignment.Application.Interfaces;
+using EffectoryAssignment.Application.Responses.Answers;
+using EffectoryAssignment.Definition.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EffectoryAssignment.API.Controllers
@@ -22,7 +24,7 @@ namespace EffectoryAssignment.API.Controllers
         {
             var answer = await _answersService.GetAnswer(subjectId, questionsId, answersId, cancellationToken);
 
-            return Ok(answer.ToAnswerResponse());
+            return Ok(answer.ToApiResponse());
         }
         
         [HttpGet]

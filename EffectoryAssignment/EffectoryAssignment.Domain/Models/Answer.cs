@@ -8,6 +8,6 @@ namespace EffectoryAssignment.Domain.Models
         public long? AnswerId { get; set; }
         public short AnswerType { get; set; }
         [JsonProperty("QuestionnaireItems")]
-        public List<QuestionnaireItemBase> QuestionnaireItems { get; set; }
+        public List<Response> Responses { get; set; }
     }
 }

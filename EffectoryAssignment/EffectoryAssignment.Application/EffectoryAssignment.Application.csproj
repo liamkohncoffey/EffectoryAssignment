@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\EffectoryAssignment.Definition\EffectoryAssignment.Definition.csproj" />
       <ProjectReference Include="..\EffectoryAssignment.Domain\EffectoryAssignment.Domain.csproj" />
     </ItemGroup>
 

@@ -1,5 +1,5 @@
 using System.Linq;
-using EffectoryAssignment.Application.Requests.questions;
+using EffectoryAssignment.Application.Responses.Questions;
 using EffectoryAssignment.Domain.Models;
 
 namespace EffectoryAssignment.Application.Extensions
@@ -10,7 +10,7 @@ namespace EffectoryAssignment.Application.Extensions
         {
             return new QuestionsApplicationResponse
             {
-                Questions = subject.Questions.Select(c => c.ToQuestionApplicationResponse())
+                Questions = subject.Questions.Select(c => c.ToApplicationResponse())
             };
         }
     }

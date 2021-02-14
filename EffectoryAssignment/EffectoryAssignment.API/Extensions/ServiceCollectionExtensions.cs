@@ -27,6 +27,7 @@ namespace EffectoryAssignment.API.Extensions
         {
             services.AddScoped<IQuestionsService, QuestionsService>();
             services.AddScoped<IAnswersService, AnswersService>();
+            services.AddScoped<IResponseService, ResponseService>();
             
             return services;
         }

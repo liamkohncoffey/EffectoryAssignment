@@ -1,6 +1,6 @@
 using System.Linq;
-using EffectoryAssignment.Application.Requests.questions;
-using EffectoryAssignment.Definition.Requests.Questions;
+using EffectoryAssignment.Application.Responses.Questions;
+using EffectoryAssignment.Definition.Responses.Questions;
 
 namespace EffectoryAssignment.API.Extensions
 {
@@ -10,7 +10,7 @@ namespace EffectoryAssignment.API.Extensions
         {
             return new GetQuestionsResponse
             {
-                Questions = response.Questions.Select(c => c.ToQuestionResponse())
+                Questions = response.Questions.Select(c => c.ToApiResponse())
             };
         }
     }

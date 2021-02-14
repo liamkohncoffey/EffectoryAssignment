@@ -1,7 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
-using EffectoryAssignment.Application.Requests;
-using EffectoryAssignment.Application.Requests.Answers;
+using EffectoryAssignment.Application.Responses;
+using EffectoryAssignment.Application.Responses.Answers;
 
 namespace EffectoryAssignment.Application.Interfaces
 {

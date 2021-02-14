@@ -43,16 +43,16 @@ namespace EffectoryAssignment.Infrastructure.Repositories
 
         public async Task<Answer> GetAnswer(long subjectId, long questionId, long answerId, CancellationToken cancellationToken)
         {
-            var answers = Questionnaire.Subjects.FirstOrDefault(c => c.SubjectId == subjectId)?
+            var answer = Questionnaire.Subjects.FirstOrDefault(c => c.SubjectId == subjectId)?
                 .Questions.FirstOrDefault(c => c.QuestionId.HasValue && c.QuestionId.Value == questionId)?
                 .Answers.FirstOrDefault(c => c.AnswerId.HasValue &&  c.AnswerId.Value == answerId);
 
-            if (answers == null)
+            if (answer == null)
             {
                 return new Answer();
             }
 
-            return answers;
+            return answer;
         }
 
         public async Task<IEnumerable<Answer>> GetAnswers(long subjectId, long questionId, CancellationToken cancellationToken)
@@ -68,6 +68,29 @@ namespace EffectoryAssignment.Infrastructure.Repositories
             }
 
             return answers;
+        }
+
+        public async Task<bool> AddResponse(long subjectId, long questionId, long answerId, Response response, CancellationToken cancellationToken = default)
+        {
+            var answer = Questionnaire.Subjects.FirstOrDefault(c => c.SubjectId == subjectId)?
+                .Questions.FirstOrDefault(c => c.QuestionId.HasValue && c.QuestionId.Value == questionId)?
+                .Answers.FirstOrDefault(c => c.AnswerId.HasValue &&  c.AnswerId.Value == answerId);
+
+            if (answer == null)
+            {
+                return false;
+            }
+
+            if (answer.Responses == null)
+            {
+                answer.Responses = new List<Response>();
+            }
+            
+            answer.Responses.Add(response);
+            
+            //repo.Save(cancellationToken)
+
+            return true;
         }
     }
 }

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace EffectoryAssignment.Application.Requests.questions
+namespace EffectoryAssignment.Application.Responses.Questions
 {
     public class QuestionsApplicationResponse
     {
